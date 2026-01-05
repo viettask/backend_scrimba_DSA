@@ -82,4 +82,15 @@ tạo ra server riêng dành cho git
     có file hosts
 
     phải copy file hosts ra ngoài và xóa file host drivers
-    
+    thêm dòng
+    192.168.139.127 git.viettask.com
+
+    rồi copy file hosts về vị trí cũ
+    vậy quá trình add host server và gitlab thành công
+
+    có thể truy cập gitlab server trên browser
+    username: root
+    còn password thì 
+
+    cat /etc/gitlab/initial_root_password
+    iL+T1eP/MOOvMYq+JMUjrHvDerjiHgF99FHTsVMv5Sc=
