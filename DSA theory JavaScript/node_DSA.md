@@ -20,3 +20,17 @@ The amount of memory space an algorithm uses during execution in relation to the
 
 7. String = text
     A sequence of characters
+
+8. Sorting Algorithms
+    Bubble Sort
+    Merge Sort
+
+9.  Search Algorithm
+    Binary Search
+    Map 
+    Stacks
+    Queues
+    Linked list
+    Trees
+    Binary Search Trees (BST)
+    Graph
