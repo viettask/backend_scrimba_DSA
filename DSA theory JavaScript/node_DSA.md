@@ -22,15 +22,33 @@ The amount of memory space an algorithm uses during execution in relation to the
     A sequence of characters
 
 8. Sorting Algorithms
-    Bubble Sort
-    Merge Sort
+    Bubble Sort: swap 2 number at start
+        Time complexity: O(n^2)
+        Space complexity: O(1)
+    Merge Sort: A fast sorting algorithms with a time complexity of O(n logn)
+        divide half and merge sort
+        Divide and Conquer
+
+
 
 9.  Search Algorithm
+    Linear Search
+        Time complexity: O(n)
+        Space complexity: O(1)
     Binary Search
-    Map 
+        An efficient searching algorithm with a time complexity of O(log n)
+    
+10. Other algorithms
+    Map :   A collection of unique key-value pairs with O(1) lookup time complexity
+            When to use a map: if have unique keys of data + fast lookup 
     Stacks
     Queues
     Linked list
     Trees
     Binary Search Trees (BST)
     Graph
+
+11. Recursion
+    Ex: Factorial
+        0! = 1
+        n! = n * (n-1)!

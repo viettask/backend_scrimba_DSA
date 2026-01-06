@@ -94,3 +94,32 @@ tạo ra server riêng dành cho git
 
     cat /etc/gitlab/initial_root_password
     iL+T1eP/MOOvMYq+JMUjrHvDerjiHgF99FHTsVMv5Sc=
+
+3. Gitlab settings
+    1. disable tạo mới user
+    untick sign-up enabled, require admin approval for new sign-ups
+    -> save changes
+
+    2. CI/CD (expand)
+    untick
+    default to auto devops pipeline for all projects
+    -> save changes
+
+    3. đổi mật khẩu user root
+    Edit profile
+    password
+
+    nhập pass cũ/pass mới
+
+    vậy là thiết lập thành công 1 gitlab server
+
+4. Tạo group
+    create group
+    private
+    new project -> create blank project
+
+
+5. Git workflow
+    Dùng Git để quản lý source code và triển khai dự án trên các môi trường
+
+6.
