@@ -1,5 +1,5 @@
-Challenge:
-**********
+// Challenge:
+// **********
 
 // Use the Big O simplification rules to simplify the following:
 // 1. O(3n) = O(n)
