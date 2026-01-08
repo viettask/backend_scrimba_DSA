@@ -43,3 +43,50 @@ docker-compose --version
 
     xem docker images
     docker images
+
+    docker run --name ubuntu -it ubuntu:22.04
+    truy cập vào docker image
+
+    pwd
+
+    ip a : kg dùng dc
+
+    vd: 
+    muốn cài đặt công cụ nào đó
+    apt update
+    apt install net-tools -y
+
+    thoát khỏi môi trường container 
+    exit
+
+    xem trạng thái của các container còn đang chạy
+    docker ps
+
+    xem tất các container đang có ở server (kể cả off)
+    docker ps -a
+
+    để start 1 container thì có 2 cách
+    cách 1: start bằng name
+    cách 2: start bằng id
+    docker start <name>/<CONTAINER ID - chỉ cần 3 ký tự đầu>
+
+    chỉ định đến 1 container với câu lệnh thực thi
+    docker exec -it ubuntu bash
+
+    chạy web server nginx có port 
+    docker run --name nginx -dp 9999:80 nginx:latest
+
+    -d là chạy dưới nền
+    bên tay trái 9999 là port ngoài server
+    bên tay phải 80 là port đang ở trong container
+    nếu kg thêm :latest hay phiên bản nó sẽ tìm bản mới nhất
+
+    Sẽ tìm kiếm trên Docker Hub 
+
+    để dừng các container 
+    docker stop
+
+    xóa docker
+    docker rm 
+    docker rm -f $(docker ps -a)
+    xóa hết các image
