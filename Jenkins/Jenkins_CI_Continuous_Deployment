@@ -1,0 +1,77 @@
+1. Dùng Jenkins agent kg phải SSH
+
+2. Bất kỳ dự án nào bạn muốn triển khai đều phải cài đat Jenkins agent
+các server mà bạn cài đăt d9eu phải có Java
+và version của Java phải tuong ứng vơi version của Java trên Jenkins server
+
+cài Java
+apt install openjdk-17-jdk  -y
+
+3. tạo user jenkins trên ubuntu-server
+useradd jenkins
+
+4. cài đặt Jenkins agent trên server
+vào Manage Jenkins -> Manage Nodes and Clouds -> New Node
+tạo lab-server (hay ubuntu-server) là một permanent agent
+
+chú ý
+labels: lab-server (hay ubuntu-server)
+Custom WorkDir path: /var/lib/jenkins (thư mục này phải tồn tại trên server)
+
+    tạo ra mkdir /var/lib/jenkins trên ubuntu-server
+
+5. Vào lại manage Jenkins -> Security
+chọn TCP port for inbound agents: Fixed
+port là trên jenkins server mà chưa có dich vụ nao chạy
+
+lên jenkins server
+netstat -tlpun 
+ chọn port nào đo it dc sử dung 
+ vd port 8999
+
+bây giờ trên Jenkins server đã mở ra 1 cái port cho agent lien ket đén
+
+6. vào lab-server (hay ubuntu-server)
+    chown jenkins . /var/lib/jenkins/
+    
+    cd /var/lib/jenkins/
+
+    su jenkins
+
+    chạy
+    echo 0d1acf3392a1687547a436399d65b0e203b3f6407613f29270076cd33ae144d9 > secret-file
+    curl -sO http://jenkins.viettask.com:8080/jnlpJars/agent.jar
+    java -jar agent.jar -url http://jenkins.viettask.com:8080/ -secret @secret-file -name "lab-server" -webSocket -workDir ""
+
+    tiến trình chạy ngầm
+    java -jar agent.jar -url http://jenkins.viettask.com:8080/ -secret @secret-file -name "lab-server" -webSocket -workDir "" > nohup.out 2>&1 &
+
+7. Ra ngoài chọn New Item 
+chỉ cần chú ý đến 2 phần Folder và Pipeline
+    Pipeline là rất tốt
+
+    Đầu tiên phải tạo folder dành riêng cho dự án chứ kg thể để dự án lộn xôn dc
+
+    Tạo folder : Action_in_lab
+
+8. Kết nối jenkins agent trên server cần triển khai dự án đến jenkins server
+    Kết nối jenkins server đến gitlab
+     kết nối qua plug in Gitlab + Blue Ocean
+
+     Chọn restart jenkins sau khi cài đặt thành công
+
+9. Sau khi cài đặt Gitlab + Blue Ocean
+    ta sẽ tiến hành kết nối Gitlab với Jenkins server
+
+10. Tạo account Jenkins trên Gitlab
+    chọn Edit Profile -> Access Token
+
+    Tạo Token name:
+    token for jenkins server connection
+
+    Chọn scopes: api,
+
+11. Token của Gitlab
+    HBFTs48DskATNqhjJPg9
+
+12. Vào Jenkins server

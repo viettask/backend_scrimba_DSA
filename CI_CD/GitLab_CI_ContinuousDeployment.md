@@ -121,6 +121,7 @@
             - lab-server
         only:
             - tags
+            
     deploy:
         stage: deploy
         variables:
