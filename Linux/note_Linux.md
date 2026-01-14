@@ -7,6 +7,8 @@ IP address: 192.168.139.128
 
 4. whoami: cho biết là đang đăng nhập vào trong phiên với user nào?
 
+id: 
+
 5. cd: di chuyển giữa các thư mục
 
 google linux system files xem quản lý thư mục trong Linux
@@ -221,3 +223,28 @@ lấy dòng cuối cùng ghi vào file log.txt
     full quyền = 4 + 2 + 1 = 7
 
     chmod 750 datas/
+
+47. Download file
+    curl http://www.some-site.com/some-file.txt -O
+    -O option to save the result to a file, otherwise it'll just print the file on screen
+
+48. Another tool is
+    wget http://www.some-site.com/some-file.txt _o some-file.txt
+
+49. To know the current OS, inspect the release files under the ETC directory
+    ls /etc/*release*
+
+    cat /etc/*release*
+
+50. Download target file to host01
+
+
+target file name : dummy.pdf
+
+target file URL: https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
+
+target directory: /home/thor
+
+    curl https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf -O /home/thor/
+
+51.
