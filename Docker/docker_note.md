@@ -44,3 +44,5 @@
     Container là process khi chạy ứng dụng đó
     có thể có nhiều container chạy từ cùng 1 image
     image dc lưu trên 1 kho chung gọi là registry
+
+16.
